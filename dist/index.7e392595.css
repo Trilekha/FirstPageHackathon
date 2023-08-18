@@ -315,10 +315,10 @@
 
 .base-page .image-upload {
   object-fit: cover;
-  width: 33px;
-  height: 33px;
+  width: 22px;
+  height: 22px;
   position: absolute;
-  top: 1px;
+  top: 5px;
   left: 268px;
 }
 
