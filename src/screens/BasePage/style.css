@@ -11,7 +11,7 @@
   border: 1px none;
   height: 1018px;
   overflow: hidden;
-  width: 1391px;
+  width: 100%;
 }
 
 .base-page .overlap {
@@ -557,7 +557,7 @@
 .base-page .text-wrapper-4 {
   color: #000000;
   font-family: "Inria Sans", Helvetica;
-  font-size: 24px;
+  font-size: 15px;
   font-weight: 400;
   left: 67px;
   letter-spacing: 0;
@@ -570,7 +570,7 @@
 .base-page .text-wrapper-5 {
   color: #d9d9d9;
   font-family: "Inria Sans", Helvetica;
-  font-size: 24px;
+  font-size: 15x;
   font-weight: 400;
   left: 215px;
   letter-spacing: 0;

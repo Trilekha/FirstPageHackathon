@@ -74,7 +74,7 @@
 .base-page .overlap-wrapper {
   background-color: #fff;
   border: 1px;
-  width: 1391px;
+  width: 100%;
   height: 1018px;
   overflow: hidden;
 }
@@ -570,7 +570,7 @@
 }
 
 .base-page .overlap-group-3 {
-  background: linear-gradient(#1989d0 0%, #094a7400 100%);
+  background-color: #00aeef;
   border-radius: 10px;
   width: 357px;
   height: 216px;
@@ -612,7 +612,7 @@
   letter-spacing: 0;
   width: 93px;
   font-family: Inria Sans, Helvetica;
-  font-size: 24px;
+  font-size: 15px;
   font-weight: 400;
   line-height: normal;
   position: absolute;
@@ -622,10 +622,10 @@
 
 .base-page .text-wrapper-5 {
   color: #d9d9d9;
+  font-family: Inria Sans, Helvetica;
+  font-size: 15dppx;
   letter-spacing: 0;
   width: 73px;
-  font-family: Inria Sans, Helvetica;
-  font-size: 24px;
   font-weight: 400;
   line-height: normal;
   position: absolute;
