@@ -1,0 +1,29 @@
+.style-radio {
+  height: 24px;
+  width: 20px;
+}
+
+.style-radio .frame {
+  height: 20px;
+}
+
+.style-radio .overlap-group {
+  border: 2px solid;
+  border-color: #24a0ed;
+  border-radius: 12px;
+  height: 24px;
+  left: -2px;
+  position: relative;
+  top: -2px;
+  width: 24px;
+}
+
+.style-radio .ellipse {
+  background-color: #24a0ed;
+  border-radius: 7.5px;
+  height: 15px;
+  left: 2px;
+  position: relative;
+  top: 2px;
+  width: 15px;
+}
