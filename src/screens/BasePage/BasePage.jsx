@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { ChromePicker } from 'react-color';
 import { StyleRadio } from "../../components/StyleRadio";
 import { StyleRadioWrapper } from "../../components/StyleRadioWrapper";
 import "./style.css";
 
 export const BasePage = () => {
+  const [showPicker, setShowPicker] = useState(false);
+  const [selectedColor, setSelectedColor] = useState('#00aeef');
+
+  const handleColorChange = (color) => {
+    setSelectedColor(color.hex);
+  };
+
+  const togglePicker = () => {
+    setShowPicker(!showPicker);
+  };
+
+  const closePicker = () => {
+    setShowPicker(false);
+  };
+
   return (
     <div className="base-page">
       <div className="overlap-wrapper">
@@ -61,7 +77,18 @@ export const BasePage = () => {
             <div className="solid-option">Solid</div>
             <div className="gradient-option">Gradient</div>
             <div className="style-header">Style</div>
-            <div className="primary-color" />
+            <button style={{backgroundColor: selectedColor}} onClick={() => {
+              setShowPicker(true)
+              
+            }}  className="primary-color" />
+            {showPicker && (
+              <div style={{ position: 'absolute', zIndex: 2 }}>
+                <ChromePicker color={selectedColor} onChange={handleColorChange} />
+                <div>
+                  <button onClick={closePicker}>Close Color Picker</button>
+                </div>
+              </div>
+            )}
             <img className="primary-color-2" alt="Primary color" src="/img/secondarycolorplaceholder.svg" />
             <div className="secondary-color-2" />
             <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />
@@ -76,7 +103,7 @@ export const BasePage = () => {
           <div className="div-wrapper">
             <div className="overlap-5">
               <div className="group">
-                <div className="overlap-group-3">
+                <div style={{backgroundColor:selectedColor}} className="overlap-group-3">
                   <img className="logo-2" alt="Logo" src="/img/logo.png" />
                   <img className="image" alt="Image" src="/img/image-2.png" />
                   <img className="image-2" alt="Image" src="/img/image-4.png" />
