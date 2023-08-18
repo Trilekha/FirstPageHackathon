@@ -4,7 +4,7 @@ import { StyleRadioWrapper } from "../../components/StyleRadioWrapper";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-export const BasePage = () => {
+export const SecondPage = () => {
   const [showPicker, setShowPicker] = useState(false);
   const [selectedColor, setSelectedColor] = useState('#00aeef');
 
@@ -118,9 +118,9 @@ export const BasePage = () => {
           <div className="text-wrapper-7">Step2</div>
           <div className="text-wrapper-8">Step3</div>
           <div className="next-button">
-          <Link to="/nextpage">
+          <Link to="/">
             <div className="overlap-6">
-              <div className="text-wrapper-9">Next</div>
+              <div className="text-wrapper-9">Previous</div>
             </div>
           </Link>
           </div>
