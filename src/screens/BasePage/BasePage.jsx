@@ -68,7 +68,7 @@ export const BasePage = () => {
             <div className="primary-color-option">Primary color</div>
             <p className="primary-color-value">
               <span className="span">#</span>
-              <span className="text-wrapper-3">FFFFFF</span>
+              <span className="text-wrapper-3">{selectedColor.slice(1)}</span>
             </p>
             <p className="p">
               <span className="span">#</span>
