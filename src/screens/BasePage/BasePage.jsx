@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { ChromePicker } from 'react-color';
-import { StyleRadio } from "../../components/StyleRadio";
+import { ChromePicker } from 'react-color';import { StyleRadio } from "../../components/StyleRadio";
 import { StyleRadioWrapper } from "../../components/StyleRadioWrapper";
 import "./style.css";
 
@@ -19,7 +18,6 @@ export const BasePage = () => {
   const closePicker = () => {
     setShowPicker(false);
   };
-
   return (
     <div className="base-page">
       <div className="overlap-wrapper">
@@ -77,9 +75,10 @@ export const BasePage = () => {
             <div className="solid-option">Solid</div>
             <div className="gradient-option">Gradient</div>
             <div className="style-header">Style</div>
+            <div className="primary-color" />
             <button style={{backgroundColor: selectedColor}} onClick={() => {
               setShowPicker(true)
-              
+
             }}  className="primary-color" />
             {showPicker && (
               <div style={{ position: 'absolute', zIndex: 2 }}>
@@ -112,6 +111,14 @@ export const BasePage = () => {
                 <div className="text-wrapper-5">BACK</div>
               </div>
               <img className="partner-logo-2" alt="Partner logo" src="/img/partnerlogo.png" />
+            </div>
+          </div>
+          <div className="text-wrapper-6">Step1</div>
+          <div className="text-wrapper-7">Step2</div>
+          <div className="text-wrapper-8">Step3</div>
+          <div className="next-button">
+            <div className="overlap-6">
+              <div className="text-wrapper-9">Next</div>
             </div>
           </div>
         </div>

@@ -261,12 +261,12 @@
 }
 
 .base-page .image-upload {
-  height: 33px;
-  left: 268px;
+  height: 25px;
+  left: 272px;
   object-fit: cover;
   position: absolute;
-  top: 1px;
-  width: 33px;
+  top: 5px;
+  width: 25px;
 }
 
 .base-page .partner-logo {
@@ -280,8 +280,8 @@
 .base-page .secondary-color {
   color: #494949;
   font-family: "Inter", Helvetica;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   left: 221px;
   letter-spacing: 0;
   line-height: normal;
@@ -294,12 +294,12 @@
   color: #494949;
   font-family: "Inter", Helvetica;
   font-size: 20px;
-  font-weight: 400;
-  left: 51px;
+  font-weight: 700;
+  left: 50px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 124px;
+  top: 128px;
   transform: rotate(-0.01deg);
   white-space: nowrap;
 }
@@ -307,8 +307,8 @@
 .base-page .primary-color-option {
   color: #494949;
   font-family: "Inter", Helvetica;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   left: 51px;
   letter-spacing: 0;
   line-height: normal;
@@ -383,7 +383,7 @@
   color: #494949;
   font-family: "Inter", Helvetica;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   left: 51px;
   letter-spacing: 0;
   line-height: normal;
@@ -451,7 +451,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 378px;
+  top: 356px;
 }
 
 .base-page .metal-option {
@@ -463,45 +463,44 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 378px;
+  top: 356px;
 }
 
 .base-page .card-material-header {
   color: #494949;
   font-family: "Inter", Helvetica;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   left: 52px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 339px;
+  top: 317px;
   white-space: nowrap;
 }
 
 .base-page .card-material-radio {
   left: 51px !important;
   position: absolute !important;
-  top: 375px !important;
+  top: 353px !important;
 }
 
 .base-page .style-radio-2-instance {
   left: 219px !important;
   position: absolute !important;
-  top: 376px !important;
+  top: 354px !important;
 }
 
 .base-page .div-wrapper {
-  background-color: #ffffff;
   height: 323px;
-  left: 796px;
+  left: 815px;
   position: absolute;
-  top: 388px;
+  top: 387px;
   width: 500px;
 }
 
 .base-page .overlap-5 {
-  height: 258px;
+  height: 276px;
   left: 73px;
   position: relative;
   top: 29px;
@@ -509,7 +508,7 @@
 }
 
 .base-page .group {
-  height: 258px;
+  height: 276px;
   left: 0;
   position: absolute;
   top: 0;
@@ -557,26 +556,26 @@
 .base-page .text-wrapper-4 {
   color: #000000;
   font-family: "Inria Sans", Helvetica;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
   left: 67px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 220px;
+  top: 238px;
   width: 93px;
 }
 
 .base-page .text-wrapper-5 {
   color: #d9d9d9;
   font-family: "Inria Sans", Helvetica;
-  font-size: 15x;
+  font-size: 20px;
   font-weight: 400;
   left: 215px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 220px;
+  top: 238px;
   width: 73px;
 }
 
@@ -586,4 +585,74 @@
   position: absolute;
   top: 40px;
   width: 74px;
+}
+
+.base-page .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inria Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 404px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 236px;
+  white-space: nowrap;
+}
+
+.base-page .text-wrapper-7 {
+  color: #000000;
+  font-family: "Inria Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 650px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 236px;
+  white-space: nowrap;
+}
+
+.base-page .text-wrapper-8 {
+  color: #000000;
+  font-family: "Inria Sans", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 901px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 232px;
+  white-space: nowrap;
+}
+
+.base-page .next-button {
+  height: 49px;
+  left: 1140px;
+  position: absolute;
+  top: 741px;
+  width: 118px;
+}
+
+.base-page .overlap-6 {
+  background-color: #00aeef;
+  border-radius: 30px;
+  height: 49px;
+  position: relative;
+  width: 116px;
+}
+
+.base-page .text-wrapper-9 {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  white-space: nowrap;
+  width: 50px;
 }
