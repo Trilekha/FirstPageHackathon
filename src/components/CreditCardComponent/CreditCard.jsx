@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export const CreditCard = ({ isSolid, logoImage, selectedColor, gradientStyle, divClassName, backgroundImage }) => {
+export const CreditCard = ({ isSolid, isPlastic, logoImage, selectedColor, gradientStyle, divClassName, backgroundImage }) => {
   return (
     <div className={`${divClassName}`}>
       <div className="overlap-5">
@@ -20,6 +20,7 @@ export const CreditCard = ({ isSolid, logoImage, selectedColor, gradientStyle, d
             <img className="image" alt="Image" src="/img/image-2.png" />
             <img className="image-2" alt="Image" src="/img/image-4.png" />
           </div>
+          { !isPlastic && <div className="shine"></div>}
           <div className="text-wrapper-4">FRONT</div>
           <div className="text-wrapper-5">BACK</div>
         </div>

@@ -48,3 +48,29 @@
     justify-content: center;
     width: 100%;
   }
+
+  .shine {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 80%
+    );
+    transform: rotate(45deg);
+    opacity: 0.6;
+    pointer-events: none;
+    animation: shineAnimation 2s infinite;
+  }
+  
+  @keyframes shineAnimation {
+    0% {
+      transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+      transform: rotate(45deg) translateX(100%);
+    }
+  }

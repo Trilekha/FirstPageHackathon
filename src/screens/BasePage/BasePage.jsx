@@ -186,6 +186,7 @@ export const BasePage = () => {
             <CreditCard 
               logoImage={logoImage}
               isSolid={isSolid}
+              isPlastic={isPlastic}
               selectedColor={selectedColor}
               gradientStyle={gradientStyle}
               divClassName="div-wrapper"
