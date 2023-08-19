@@ -1,26 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { ChromePicker } from 'react-color';
+import { StyleRadio, StyleRadioWrapper } from "../../components/StyleRadio";
+import "./style.css";
 import { Link } from "react-router-dom";
-import "./style1.css";
 
 export const SecondPage = () => {
+  const [showPicker, setShowPicker] = useState(false);
+  const [selectedColor, setSelectedColor] = useState('#00aeef');
+
+  const handleColorChange = (color) => {
+    setSelectedColor(color.hex);
+  };
+
+  const togglePicker = () => {
+    setShowPicker(!showPicker);
+  };
+
+  const closePicker = () => {
+    setShowPicker(false);
+  };
   return (
-    <div className="second-page">
+    <div className="base-page">
       <div className="overlap-wrapper">
         <div className="overlap">
+          <div className="rectangle" />
           <div className="skeleton" />
           <div className="steps-circle-things">
-            <div className="overlap-group">
+            <div className="overlap-2">
               <div className="circle">
-                <div className="div">
+                <div className="overlap-group-2">
                   <img className="line" alt="Line" src="/img/line-1.svg" />
-                  <div className="ellipse" />
+                  <div className="ellipse-2" />
                   <div className="text-wrapper">1</div>
                 </div>
               </div>
               <div className="overlap-group-wrapper">
-                <div className="overlap-2">
+                <div className="overlap-3">
                   <img className="img" alt="Line" src="/img/line-2.svg" />
-                  <div className="ellipse-2" />
+                  <div className="ellipse-3" />
                   <div className="text-wrapper-2">2</div>
                 </div>
               </div>
@@ -37,28 +54,76 @@ export const SecondPage = () => {
             </div>
           </footer>
           <div className="nav-bar">
-            <img className="logo" alt="Logo" src="/img/logo.png" />
+            <img className="logo" alt="Logo" src="/img/logo-1.png" />
           </div>
-          <div className="progresss-bars">
-            <div className="text-wrapper-3">Step1</div>
-            <div className="text-wrapper-4">Step2</div>
-            <div className="text-wrapper-5">Step3</div>
-          </div>
-          <Link to="/lastpage">
-          <div className="next-button">
-            <div className="div-wrapper">
-              <div className="text-wrapper-6">Next</div>
+          <div className="cardart-design">
+            <div className="primary-logo-header">Primary Logo</div>
+            <div className="overlap-4">
+              <img className="image-upload" alt="Image upload" src="/img/imageupload.png" />
+              <img className="partner-logo" alt="Partner logo" src="/img/partnerlogo.png" />
             </div>
-          </div>
-          </Link>
-          <Link to="/">
-          <div className="prev-button">
-            <div className="div-wrapper">
-              <div className="text-wrapper-7">Previous</div>
-            </div>
-          </div>
-          </Link>
+            <div className="secondary-color">Secondary color</div>
+            <div className="overall-branding">Overall Branding</div>
+            <div className="primary-color-option">Primary color</div>
+            <p className="primary-color-value">
+              <span className="span">#</span>
+              <span className="text-wrapper-3">{selectedColor.slice(1)}</span>
+            </p>
+            <p className="p">
+              <span className="span">#</span>
+              <span className="text-wrapper-3">FFFFFF</span>
+            </p>
+            <div className="solid-option">Solid</div>
+            <div className="gradient-option">Gradient</div>
+            <div className="style-header">Style</div>
+            <div className="primary-color" />
+            <button style={{backgroundColor: selectedColor}} onClick={() => {
+              setShowPicker(true)
 
+            }}  className="primary-color" />
+            {showPicker && (
+              <div style={{ position: 'absolute', zIndex: 2 }}>
+                <ChromePicker color={selectedColor} onChange={handleColorChange} />
+                <div>
+                  <button onClick={closePicker}>Close Color Picker</button>
+                </div>
+              </div>
+            )}
+            <img className="primary-color-2" alt="Primary color" src="/img/secondarycolorplaceholder.svg" />
+            <div className="secondary-color-2" />
+            <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />
+            <StyleRadio className="style-radio-2" />
+            <StyleRadioWrapper className="style-radio-instance" />
+            <div className="plastic-option">Plastic</div>
+            <div className="metal-option">Metal</div>
+            <div className="card-material-header">Card Material</div>
+            <StyleRadio className="card-material-radio" />
+            <StyleRadioWrapper className="style-radio-2-instance" />
+          </div>
+          <div className="div-wrapper">
+            <div className="overlap-5">
+              <div className="group">
+                <div style={{backgroundColor:selectedColor}} className="overlap-group-3">
+                  <img className="logo-2" alt="Logo" src="/img/logo.png" />
+                  <img className="image" alt="Image" src="/img/image-2.png" />
+                  <img className="image-2" alt="Image" src="/img/image-4.png" />
+                </div>
+                <div className="text-wrapper-4">FRONT</div>
+                <div className="text-wrapper-5">BACK</div>
+              </div>
+              <img className="partner-logo-2" alt="Partner logo" src="/img/partnerlogo.png" />
+            </div>
+          </div>
+          <div className="text-wrapper-6">Step1</div>
+          <div className="text-wrapper-7">Step2</div>
+          <div className="text-wrapper-8">Step3</div>
+          <div className="next-button">
+          <Link to="/">
+            <div className="overlap-6">
+              <div className="text-wrapper-9">Previous</div>
+            </div>
+          </Link>
+          </div>
         </div>
       </div>
     </div>

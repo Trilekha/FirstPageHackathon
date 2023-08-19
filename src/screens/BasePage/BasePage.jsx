@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import React, { useRef } from "react";
 import { ChromePicker } from 'react-color';import { StyleRadio } from "../../components/StyleRadio";
-import { StyleRadioWrapper } from "../../components/StyleRadioWrapper";
 import "./style.css";
 import { Link } from "react-router-dom";
 
 export const BasePage = () => {
   const [showPicker, setShowPicker] = useState(false);
+  const [isSolid, setIsSolid] = useState(false);
+  const [isPlastic, setIsPlastic] = useState(true);
+
   const [selectedColor, setSelectedColor] = useState('#00aeef');
   const [secondaryColor, setSecondaryColor] = useState('#d0d8de');
   const [showSecondaryPicker, setShowSecondaryPicker] = useState(false);
@@ -35,13 +37,14 @@ export const BasePage = () => {
     fileInputRef.current.click();
   }
   const gradientStyle = `linear-gradient(to bottom, ${selectedColor}, ${secondaryColor})`;
+  const solidStyle = ``
 
   const CreditCard = ({backgroundImage}) => {
     return (
       <div className="div-wrapper">
       <div className="overlap-5">
         <div className="group">
-          <div style={{background:gradientStyle}} className="overlap-group-3">
+          <div style={ isSolid ? {background:selectedColor} : {background:gradientStyle}} className="overlap-group-3">
             <img className="logo-2" alt="Logo" src="/img/logo.png" />
             <img className="image" alt="Image" src="/img/image-2.png" />
             <img className="image-2" alt="Image" src="/img/image-4.png" />
@@ -113,17 +116,20 @@ export const BasePage = () => {
             </div>
               <img className="partner-logo" alt="Partner logo" src="/img/partnerlogo.png" />
             </div>
-            <div className="secondary-color">Secondary color</div>
+            { !isSolid && <div className="secondary-color">Secondary color</div>}
             <div className="overall-branding">Overall Branding</div>
             <div className="primary-color-option">Primary color</div>
             <p className="primary-color-value">
               <span className="span">#</span>
               <span className="text-wrapper-3">{selectedColor.slice(1)}</span>
             </p>
-            <p className="p">
-              <span className="span">#</span>
-              <span className="text-wrapper-3">{secondaryColor.slice(1)}</span>
-            </p>
+            { !isSolid &&
+              <p className="p">
+                <span className="span">#</span>
+                <span className="text-wrapper-3">{secondaryColor.slice(1)}</span>
+              </p>
+            }
+
             <div className="solid-option">Solid</div>
             <div className="gradient-option">Gradient</div>
             <div className="style-header">Style</div>
@@ -141,12 +147,16 @@ export const BasePage = () => {
               </div>
             )}
             <img className="primary-color-2" alt="Primary color" src="/img/secondarycolorplaceholder.svg" />
-            <div className="secondary-color-2" />
-            <button
-              style={{ backgroundColor: secondaryColor }}
-              onClick={toggleSecondaryPicker}
-              className="secondary-color-2"
-            />
+            { !isSolid && 
+            <>
+              <div className="secondary-color-2" />
+              <button
+                style={{ backgroundColor: secondaryColor }}
+                onClick={toggleSecondaryPicker}
+                className="secondary-color-2"
+              />
+            </>
+            }
             {showSecondaryPicker && (
               <div style={{ position: 'absolute', zIndex: 2 }}>
                 <ChromePicker color={secondaryColor} onChange={handleSecondaryColorChange} />
@@ -155,14 +165,27 @@ export const BasePage = () => {
                 </div>
               </div>
             )}
-            <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />
+            { !isSolid && <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />}
             <div className="card-material-header">Card Material</div>
-            <StyleRadio className="style-radio-2" />
-            <StyleRadioWrapper className="style-radio-instance" />
+            <StyleRadio onClick={() => {
+                setIsSolid(true)
+              }} isSelected={isSolid} 
+              className="style-radio-2" 
+            />
+            <StyleRadio onClick={() => {
+              setIsSolid(false)
+            }} isSelected={!isSolid} className="style-radio-instance" />
             <div className="plastic-option">Plastic</div>
             <div className="metal-option">Metal</div>
-            <StyleRadio className="card-material-radio" />
-            <StyleRadioWrapper className="style-radio-2-instance" />
+            <StyleRadio onClick={() => {
+              setIsPlastic(true)
+            }}
+            isSelected={isPlastic}
+            className="card-material-radio" />
+            <StyleRadio onClick={() => {
+              setIsPlastic(false)
+            }}
+            isSelected={!isPlastic} className="style-radio-2-instance" />
           </div>
           <div>
             <CreditCard 
