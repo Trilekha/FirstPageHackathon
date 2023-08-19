@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { ChromePicker } from 'react-color';import { StyleRadio } from "../../components/StyleRadio";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { CreditCard } from "../../components/CreditCardComponent/CreditCard";
 
 export const BasePage = () => {
   const [showPicker, setShowPicker] = useState(false);
@@ -38,26 +39,6 @@ export const BasePage = () => {
   }
   const gradientStyle = `linear-gradient(to bottom, ${selectedColor}, ${secondaryColor})`;
   const solidStyle = ``
-
-  const CreditCard = ({backgroundImage}) => {
-    return (
-      <div className="div-wrapper">
-      <div className="overlap-5">
-        <div className="group">
-          <div style={ isSolid ? {background:selectedColor} : {background:gradientStyle}} className="overlap-group-3">
-            <img className="logo-2" alt="Logo" src="/img/logo.png" />
-            <img className="image" alt="Image" src="/img/image-2.png" />
-            <img className="image-2" alt="Image" src="/img/image-4.png" />
-          </div>
-          <div className="text-wrapper-4">FRONT</div>
-          <div className="text-wrapper-5">BACK</div>
-        </div>
-        <img className="partner-logo-2" alt="Partner logo" src={backgroundImage} style={{ maxWidth: '100px' }}/>
-      </div>
-    </div>
-      
-    );
-  };
 
   const handleColorChange = (color) => {
     setSelectedColor(color.hex);
@@ -189,23 +170,13 @@ export const BasePage = () => {
           </div>
           <div>
             <CreditCard 
-            backgroundImage={backgroundImage}
-          />
+              logoImage={backgroundImage}
+              isSolid={isSolid}
+              selectedColor={selectedColor}
+              gradientStyle={gradientStyle}
+              divClassName="div-wrapper"
+            />
           </div>
-          {/* <div className="div-wrapper">
-            <div className="overlap-5">
-              <div className="group">
-                <div style={{backgroundColor:selectedColor}} className="overlap-group-3">
-                  <img className="logo-2" alt="Logo" src="/img/logo.png" />
-                  <img className="image" alt="Image" src="/img/image-2.png" />
-                  <img className="image-2" alt="Image" src="/img/image-4.png" />
-                </div>
-                <div className="text-wrapper-4">FRONT</div>
-                <div className="text-wrapper-5">BACK</div>
-              </div>
-              <img className="partner-logo-2" alt="Partner logo" src="/img/partnerlogo.png" />
-            </div>
-          </div> */}
           <div className="text-wrapper-6">Step1</div>
           <div className="text-wrapper-7">Step2</div>
           <div className="text-wrapper-8">Step3</div>
