@@ -14,8 +14,10 @@ export const BasePage = () => {
   const [secondaryColor, setSecondaryColor] = useState('#d0d8de');
   const [showSecondaryPicker, setShowSecondaryPicker] = useState(false);
 
-  const [backgroundImage, setBackgroundImage] = useState("img/partnerlogo.png");
+  const [logoImage, setLogoImage] = useState("img/partnerlogo.png");
+  const [cardBackgroundImage, setCardBackgroundImage] = useState("img/partnerlogo.png");
   const fileInputRef = useRef(null);
+  const bgFileInputRef = useRef(null);
 
   const handleSecondaryColorChange = (color) => {
     setSecondaryColor(color.hex);
@@ -30,18 +32,21 @@ export const BasePage = () => {
   };
 
   const handleImageUpload = (event) => {
-    const uploadedImage = URL.createObjectURL(event.target.files[0]);
-    setBackgroundImage(uploadedImage);
+    const uploadedLogo = URL.createObjectURL(event.target.files[0]);
+    setLogoImage(uploadedLogo);
   };
 
-  const uploadImage = () => {
-    fileInputRef.current.click();
-  }
+  const handleBgImageUpload = (event) => {
+    const uploadedImage = URL.createObjectURL(event.target.files[0]);
+    setCardBackgroundImage(uploadedImage);
+  };
+
   const gradientStyle = `linear-gradient(to bottom, ${selectedColor}, ${secondaryColor})`;
   const solidStyle = ``
 
   const handleColorChange = (color) => {
     setSelectedColor(color.hex);
+    setCardBackgroundImage(null); // Clear background image
   };
 
   const togglePicker = () => {
@@ -90,8 +95,8 @@ export const BasePage = () => {
           </div>
           <div className="cardart-design">
             <div className="primary-logo-header">Primary Logo</div>
-            <div className="overlap-4">
-            <div className="upload-placeholder" onClick={uploadImage}>
+            <div className="overlap-4" onClick={() => fileInputRef.current.click()}>
+            <div className="upload-placeholder">
               <img className="image-upload" alt="Image upload" src="/img/imageupload.png" /> 
               <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none'}}/>
             </div>
@@ -150,10 +155,10 @@ export const BasePage = () => {
             { !isSolid && <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />}
             <div className="theme-text">Background Image</div>
             <div className="theme-upload-text">Upload Custom Image</div>
-            <div className="theme-upload-button" onClick={uploadImage}>
+            <div className="theme-upload-button" onClick={() => bgFileInputRef.current.click()}>
               <img className="image-upload" alt="Image upload" src="/img/imageupload.png" />
               <span className="upload-text">Browse</span>
-              <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none' }} />
+              <input ref={bgFileInputRef} type="file" accept="image/*" onChange={handleBgImageUpload} style={{ display: 'none' }} />
             </div>
 
             <div className="card-material-header">Card Material</div>
@@ -179,11 +184,12 @@ export const BasePage = () => {
           </div>
           <div>
             <CreditCard 
-              logoImage={backgroundImage}
+              logoImage={logoImage}
               isSolid={isSolid}
               selectedColor={selectedColor}
               gradientStyle={gradientStyle}
               divClassName="div-wrapper"
+              backgroundImage={cardBackgroundImage}
             />
           </div>
           <div className="text-wrapper-6">Step1</div>
