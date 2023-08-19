@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import React, { useRef } from "react";
 import { ChromePicker } from 'react-color';import { StyleRadio } from "../../components/StyleRadio";
 import { StyleRadioWrapper } from "../../components/StyleRadioWrapper";
 import "./style.css";
@@ -7,6 +8,37 @@ import { Link } from "react-router-dom";
 export const BasePage = () => {
   const [showPicker, setShowPicker] = useState(false);
   const [selectedColor, setSelectedColor] = useState('#00aeef');
+  const [backgroundImage, setBackgroundImage] = useState("img/partnerlogo.png");
+  const fileInputRef = useRef(null);
+
+  const handleImageUpload = (event) => {
+    const uploadedImage = URL.createObjectURL(event.target.files[0]);
+    setBackgroundImage(uploadedImage);
+  };
+
+  const uploadImage = () => {
+    fileInputRef.current.click();
+  }
+
+  const CreditCard = ({backgroundImage}) => {
+    return (
+      <div className="div-wrapper">
+      <div className="overlap-5">
+        <div className="group">
+          <div style={{backgroundColor:selectedColor}} className="overlap-group-3">
+            <img className="logo-2" alt="Logo" src="/img/logo.png" />
+            <img className="image" alt="Image" src="/img/image-2.png" />
+            <img className="image-2" alt="Image" src="/img/image-4.png" />
+          </div>
+          <div className="text-wrapper-4">FRONT</div>
+          <div className="text-wrapper-5">BACK</div>
+        </div>
+        <img className="partner-logo-2" alt="Partner logo" src={backgroundImage} style={{ maxWidth: '100px' }}/>
+      </div>
+    </div>
+      
+    );
+  };
 
   const handleColorChange = (color) => {
     setSelectedColor(color.hex);
@@ -59,7 +91,10 @@ export const BasePage = () => {
           <div className="cardart-design">
             <div className="primary-logo-header">Primary Logo</div>
             <div className="overlap-4">
-              <img className="image-upload" alt="Image upload" src="/img/imageupload.png" />
+            <div className="upload-placeholder" onClick={uploadImage}>
+              <img className="image-upload" alt="Image upload" src="/img/imageupload.png" /> 
+              <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none'}}/>
+            </div>
               <img className="partner-logo" alt="Partner logo" src="/img/partnerlogo.png" />
             </div>
             <div className="secondary-color">Secondary color</div>
@@ -100,7 +135,12 @@ export const BasePage = () => {
             <StyleRadio className="card-material-radio" />
             <StyleRadioWrapper className="style-radio-2-instance" />
           </div>
-          <div className="div-wrapper">
+          <div>
+            <CreditCard 
+            backgroundImage={backgroundImage}
+          />
+          </div>
+          {/* <div className="div-wrapper">
             <div className="overlap-5">
               <div className="group">
                 <div style={{backgroundColor:selectedColor}} className="overlap-group-3">
@@ -113,7 +153,7 @@ export const BasePage = () => {
               </div>
               <img className="partner-logo-2" alt="Partner logo" src="/img/partnerlogo.png" />
             </div>
-          </div>
+          </div> */}
           <div className="text-wrapper-6">Step1</div>
           <div className="text-wrapper-7">Step2</div>
           <div className="text-wrapper-8">Step3</div>
