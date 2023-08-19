@@ -96,11 +96,11 @@ export const BasePage = () => {
           <div className="cardart-design">
             <div className="primary-logo-header">Primary Logo</div>
             <div className="overlap-4" onClick={() => fileInputRef.current.click()}>
+            <span className="upload-text">Upload Logo</span>
             <div className="upload-placeholder">
               <img className="image-upload" alt="Image upload" src="/img/imageupload.png" /> 
               <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none'}}/>
             </div>
-              <img className="partner-logo" alt="Partner logo" src="/img/partnerlogo.png" />
             </div>
             { !isSolid && <div className="secondary-color">Secondary color</div>}
             <div className="overall-branding">Overall Branding</div>
