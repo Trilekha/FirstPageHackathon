@@ -30,7 +30,7 @@
 }
 
 .base-page .skeleton {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgb(0, 57, 93) 0%,
     rgba(216.71, 235.78, 246.5, 0.54) 5.13%,
@@ -40,7 +40,7 @@
     rgba(217.42, 219.02, 219.92, 0.11) 34.64%,
     rgba(255, 255, 255, 0.07) 49.87%,
     rgba(217, 217, 217, 0) 100%
-  );
+  ); */
   height: 1018px;
   left: 0;
   position: absolute;
@@ -394,7 +394,7 @@
   font-family: "Inter", Helvetica;
   font-size: 15px;
   font-weight: 400;
-  left: 248px;
+  left: 240px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -470,7 +470,7 @@
 
 .base-page .secondary-color-3 {
   height: 2px;
-  left: 248px;
+  left: 240px;
   object-fit: cover;
   position: absolute;
   top: 230px;
