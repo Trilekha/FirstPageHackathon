@@ -8,8 +8,23 @@ import { Link } from "react-router-dom";
 export const BasePage = () => {
   const [showPicker, setShowPicker] = useState(false);
   const [selectedColor, setSelectedColor] = useState('#00aeef');
+  const [secondaryColor, setSecondaryColor] = useState('#d0d8de');
+  const [showSecondaryPicker, setShowSecondaryPicker] = useState(false);
+
   const [backgroundImage, setBackgroundImage] = useState("img/partnerlogo.png");
   const fileInputRef = useRef(null);
+
+  const handleSecondaryColorChange = (color) => {
+    setSecondaryColor(color.hex);
+  };
+
+  const toggleSecondaryPicker = () => {
+    setShowSecondaryPicker(!showSecondaryPicker);
+  };
+
+  const closeSecondaryPicker = () => {
+    setShowSecondaryPicker(false);
+  };
 
   const handleImageUpload = (event) => {
     const uploadedImage = URL.createObjectURL(event.target.files[0]);
@@ -19,13 +34,14 @@ export const BasePage = () => {
   const uploadImage = () => {
     fileInputRef.current.click();
   }
+  const gradientStyle = `linear-gradient(to bottom, ${selectedColor}, ${secondaryColor})`;
 
   const CreditCard = ({backgroundImage}) => {
     return (
       <div className="div-wrapper">
       <div className="overlap-5">
         <div className="group">
-          <div style={{backgroundColor:selectedColor}} className="overlap-group-3">
+          <div style={{background:gradientStyle}} className="overlap-group-3">
             <img className="logo-2" alt="Logo" src="/img/logo.png" />
             <img className="image" alt="Image" src="/img/image-2.png" />
             <img className="image-2" alt="Image" src="/img/image-4.png" />
@@ -106,7 +122,7 @@ export const BasePage = () => {
             </p>
             <p className="p">
               <span className="span">#</span>
-              <span className="text-wrapper-3">FFFFFF</span>
+              <span className="text-wrapper-3">{secondaryColor.slice(1)}</span>
             </p>
             <div className="solid-option">Solid</div>
             <div className="gradient-option">Gradient</div>
@@ -126,12 +142,25 @@ export const BasePage = () => {
             )}
             <img className="primary-color-2" alt="Primary color" src="/img/secondarycolorplaceholder.svg" />
             <div className="secondary-color-2" />
+            <button
+              style={{ backgroundColor: secondaryColor }}
+              onClick={toggleSecondaryPicker}
+              className="secondary-color-2"
+            />
+            {showSecondaryPicker && (
+              <div style={{ position: 'absolute', zIndex: 2 }}>
+                <ChromePicker color={secondaryColor} onChange={handleSecondaryColorChange} />
+                <div>
+                  <button onClick={closeSecondaryPicker}>Close Color Picker</button>
+                </div>
+              </div>
+            )}
             <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />
+            <div className="card-material-header">Card Material</div>
             <StyleRadio className="style-radio-2" />
             <StyleRadioWrapper className="style-radio-instance" />
             <div className="plastic-option">Plastic</div>
             <div className="metal-option">Metal</div>
-            <div className="card-material-header">Card Material</div>
             <StyleRadio className="card-material-radio" />
             <StyleRadioWrapper className="style-radio-2-instance" />
           </div>
