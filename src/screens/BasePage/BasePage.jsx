@@ -99,7 +99,7 @@ export const BasePage = () => {
             </div>
             { !isSolid && <div className="secondary-color">Secondary color</div>}
             <div className="overall-branding">Overall Branding</div>
-            <div className="color-text">Colors</div>
+            <div className="color-text">Background Color and Styles</div>
             <div className="primary-color-option">Primary color</div>
             <p className="primary-color-value">
               <span className="span">#</span>
@@ -148,7 +148,7 @@ export const BasePage = () => {
               </div>
             )}
             { !isSolid && <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />}
-            <div className="theme-text">Theme</div>
+            <div className="theme-text">Background Image</div>
             <div className="theme-upload-text">Upload Custom Image</div>
             <div className="theme-upload-button" onClick={uploadImage}>
               <img className="image-upload" alt="Image upload" src="/img/imageupload.png" />
