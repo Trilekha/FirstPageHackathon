@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./style1.css";
+import "./style2.css";
 
-export const SecondPage = () => {
+export const ThirdPage = () => {
   return (
-    <div className="second-page">
+    <div className="third-page">
       <div className="overlap-wrapper">
         <div className="overlap">
           <div className="skeleton" />
@@ -44,21 +44,13 @@ export const SecondPage = () => {
             <div className="text-wrapper-4">Step2</div>
             <div className="text-wrapper-5">Step3</div>
           </div>
-          <Link to="/lastpage">
-          <div className="next-button">
-            <div className="div-wrapper">
-              <div className="text-wrapper-6">Next</div>
-            </div>
-          </div>
-          </Link>
-          <Link to="/">
+          <Link to="/nextpage">
           <div className="prev-button">
             <div className="div-wrapper">
-              <div className="text-wrapper-7">Previous</div>
+              <div className="text-wrapper-6">Previous</div>
             </div>
           </div>
           </Link>
-
         </div>
       </div>
     </div>

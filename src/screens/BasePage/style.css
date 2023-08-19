@@ -11,7 +11,7 @@
   border: 1px none;
   height: 1018px;
   overflow: hidden;
-  width: 100%;
+  width: auto;
 }
 
 .base-page .overlap {
