@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { ChromePicker } from 'react-color';import { StyleRadio } from "../../components/StyleRadio";
 import "./style.css";
 import { Link } from "react-router-dom";
@@ -118,6 +118,7 @@ export const BasePage = () => {
             </div>
             { !isSolid && <div className="secondary-color">Secondary color</div>}
             <div className="overall-branding">Overall Branding</div>
+            <div className="color-text">Colors</div>
             <div className="primary-color-option">Primary color</div>
             <p className="primary-color-value">
               <span className="span">#</span>
@@ -166,26 +167,34 @@ export const BasePage = () => {
               </div>
             )}
             { !isSolid && <img className="secondary-color-3" alt="Secondary color" src="/img/secondarycolorplaceholder.svg" />}
+            <div className="theme-text">Theme</div>
+            <div className="theme-upload-text">Upload Custom Image</div>
+            <div className="theme-upload-button" onClick={uploadImage}>
+              <img className="image-upload" alt="Image upload" src="/img/imageupload.png" />
+              <span className="upload-text">Browse</span>
+              <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} style={{ display: 'none' }} />
+            </div>
+
             <div className="card-material-header">Card Material</div>
             <StyleRadio onClick={() => {
                 setIsSolid(true)
               }} isSelected={isSolid} 
-              className="style-radio-2" 
+              className="set-solid-radio" 
             />
             <StyleRadio onClick={() => {
               setIsSolid(false)
-            }} isSelected={!isSolid} className="style-radio-instance" />
+            }} isSelected={!isSolid} className="set-gradient-radio" />
             <div className="plastic-option">Plastic</div>
             <div className="metal-option">Metal</div>
             <StyleRadio onClick={() => {
               setIsPlastic(true)
             }}
             isSelected={isPlastic}
-            className="card-material-radio" />
+            className="set-plastic-radio" />
             <StyleRadio onClick={() => {
               setIsPlastic(false)
             }}
-            isSelected={!isPlastic} className="style-radio-2-instance" />
+            isSelected={!isPlastic} className="set-metal-radio" />
           </div>
           <div>
             <CreditCard 

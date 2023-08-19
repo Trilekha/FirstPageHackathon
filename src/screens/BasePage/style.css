@@ -286,7 +286,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 168px;
+  top: 185px;
   white-space: nowrap;
 }
 
@@ -304,6 +304,48 @@
   white-space: nowrap;
 }
 
+.base-page .color-text {
+  color: #494949;
+  font-family: "Inter", Helvetica;
+  font-size: 17px;
+  font-weight: 520;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 160px;
+  transform: rotate(-0.01deg);
+  white-space: nowrap;
+}
+
+.base-page .theme-text {
+  color: #494949;
+  font-family: "Inter", Helvetica;
+  font-size: 17px;
+  font-weight: 520;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 316px;
+  transform: rotate(-0.01deg);
+  white-space: nowrap;
+}
+
+.base-page .theme-upload-text {
+  color: #494949;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  font-weight: 500;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 341px;
+  transform: rotate(-0.01deg);
+  white-space: nowrap;
+}
+
 .base-page .primary-color-option {
   color: #494949;
   font-family: "Inter", Helvetica;
@@ -313,7 +355,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 166px;
+  top: 185px;
   white-space: nowrap;
 }
 
@@ -326,7 +368,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 201px;
+  top: 210px;
   white-space: nowrap;
 }
 
@@ -351,7 +393,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 201px;
+  top: 210px;
   white-space: nowrap;
 }
 
@@ -388,7 +430,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 244px;
+  top: 250px;
   white-space: nowrap;
 }
 
@@ -398,7 +440,7 @@
   height: 18px;
   left: 51px;
   position: absolute;
-  top: 204px;
+  top: 210px;
   width: 19px;
 }
 
@@ -407,7 +449,7 @@
   left: 82px;
   object-fit: cover;
   position: absolute;
-  top: 221px;
+  top: 230px;
   width: 82px;
 }
 
@@ -417,7 +459,7 @@
   height: 18px;
   left: 212px;
   position: absolute;
-  top: 204px;
+  top: 210px;
   width: 19px;
 }
 
@@ -426,20 +468,22 @@
   left: 248px;
   object-fit: cover;
   position: absolute;
-  top: 221px;
+  top: 230px;
   width: 82px;
 }
 
-.base-page .style-radio-2 {
+.base-page .set-solid-radio {
   left: 50px !important;
   position: absolute !important;
-  top: 279px !important;
+  top: 280px !important;
+  height: 18px;
+  width: 19px;
 }
 
-.base-page .style-radio-instance {
+.base-page .set-gradient-radio {
   left: 215px !important;
+  top: 280px;
   position: absolute !important;
-  top: 281px !important;
 }
 
 .base-page .plastic-option {
@@ -451,7 +495,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 356px;
+  top: 450px;
 }
 
 .base-page .metal-option {
@@ -463,32 +507,33 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 356px;
+  top: 450px;
 }
+
 
 .base-page .card-material-header {
   color: #494949;
   font-family: "Inter", Helvetica;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 520;
   left: 52px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 317px;
+  top: 420px;
   white-space: nowrap;
 }
 
-.base-page .card-material-radio {
+.base-page .set-plastic-radio {
   left: 51px !important;
   position: absolute !important;
-  top: 353px !important;
+  top: 450px !important;
 }
 
-.base-page .style-radio-2-instance {
+.base-page .set-metal-radio {
   left: 219px !important;
   position: absolute !important;
-  top: 354px !important;
+  top: 450px !important;
 }
 
 .base-page .div-wrapper {
@@ -656,3 +701,25 @@
   white-space: nowrap;
   width: 50px;
 }
+.base-page .theme-upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 370px;
+  left: 50px;
+  width: 311px;
+  height: 40px;
+  background-color: #00aeef;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.base-page .upload-text {
+  color: white;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
